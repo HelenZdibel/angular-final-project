@@ -9,12 +9,14 @@ import { CartComponent } from './components/cart/cart.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { DetailsComponent } from './components/details/details.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  {path: 'details/:id', component: DetailsComponent},
   { path: 'cart', component: CartComponent },
   { path: 'contact', component: ContactComponent },
-  { path: '**', redirectTo: '' },
+  { path: '**', redirectTo: '' }, // todo: 404 page
 ];
 
 @NgModule({
@@ -25,6 +27,7 @@ const routes: Routes = [
     ContactComponent,
     HeaderComponent,
     FooterComponent,
+    DetailsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, RouterModule.forRoot(routes)],
   providers: [],
