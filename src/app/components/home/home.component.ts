@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LstorageService } from '../../services/lstorage.service';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,8 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
+
+  constructor(private lstorageService: LstorageService) {}
   products = [
     {
       id: 1,
@@ -80,4 +83,9 @@ export class HomeComponent {
       image: 'https://picsum.photos/id/99/200/300',
     },
   ];
+
+  addToCart(product: object) {
+    console.log('Product added to cart:', product);
+    this.lstorageService.addToCart(product);
+  }
 }
