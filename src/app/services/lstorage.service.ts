@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LstorageService {
-
   private cartKey = 'cart';
 
-  constructor() { }
+  constructor() {}
 
   // Save cart items to localStorage
   saveCart(items: any[]): void {
@@ -28,8 +27,18 @@ export class LstorageService {
   // Add item to cart
   addToCart(item: any): void {
     const cart = this.getCart();
-    if (!cart.some(cartItem => cartItem.id === item.id)) {
+    if (!cart.some((cartItem) => cartItem.id === item.id)) {
       cart.push(item);
+      this.saveCart(cart);
+    }
+  }
+
+  // Remove item from cart
+  removeFromCart(id: number): void {
+    const cart = this.getCart();
+    const index = cart.findIndex((cartItem) => cartItem.id === id);
+    if (index !== -1) {
+      cart.splice(index, 1);
       this.saveCart(cart);
     }
   }

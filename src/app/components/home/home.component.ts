@@ -9,7 +9,6 @@ import { LstorageService } from '../../services/lstorage.service';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-
   constructor(private lstorageService: LstorageService) {}
   products = [
     {
@@ -85,7 +84,6 @@ export class HomeComponent {
   ];
 
   addToCart(product: object) {
-    console.log('Product added to cart:', product);
     this.lstorageService.addToCart(product);
   }
 }
