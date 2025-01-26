@@ -11,6 +11,7 @@ import { ProductService } from '../../services/product.service';
 export class HomeComponent {
 
   products: any[];
+  filterTerm: string = '';
 
   constructor(
     private lstorageService: LstorageService,
@@ -18,6 +19,18 @@ export class HomeComponent {
   ) {
     this.products = this.productService.getProducts();
   }
+
+  filterProducts() {
+    const searchTerm = this.filterTerm.trim();
+    if (!searchTerm) {
+      this.products = this.productService.getProducts();
+      return;
+    }
+    this.products = this.productService.getProducts().filter((product) =>
+      product.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }
+
 
   addToCart(product: any) {
     this.lstorageService.addToCart(product);
@@ -30,4 +43,14 @@ export class HomeComponent {
   isInCart(id: number): boolean {
     return this.lstorageService.isInCart(id);
   }
+
+  getCartCount(): number {
+    return this.lstorageService.getCart().length;
+  }
+
+  clearCart() {
+    this.lstorageService.clearCart();
+  }
+
+
 }

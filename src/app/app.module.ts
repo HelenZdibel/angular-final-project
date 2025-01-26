@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +14,7 @@ import { DetailsComponent } from './components/details/details.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  {path: 'details/:id', component: DetailsComponent},
+  { path: 'details/:id', component: DetailsComponent },
   { path: 'cart', component: CartComponent },
   { path: 'contact', component: ContactComponent },
   { path: '**', redirectTo: '' }, // todo: 404 page
@@ -29,8 +30,12 @@ const routes: Routes = [
     FooterComponent,
     DetailsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, RouterModule.forRoot(routes)],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    RouterModule.forRoot(routes),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

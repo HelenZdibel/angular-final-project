@@ -1,3 +1,15 @@
+<h1>Products</h1>
+<div class="search">
+  <input
+    type="text"
+    [(ngModel)]="filterTerm"
+    (change)="filterProducts()"
+    placeholder="Search..."
+  />
+
+  <button>Search</button>
+</div>
+
 <div class="product-grid">
   <div class="product" *ngFor="let product of products; let i = index">
     <img [src]="product.image" alt="{{ product.name }}" />
@@ -6,7 +18,7 @@
     </h2>
     <p>{{ product.description }}</p>
     <p>${{ product.price }}</p>
-    
+
     <button *ngIf="isInCart(product.id)" (click)="removeFromCart(product.id)">
       Remove from cart
     </button>
