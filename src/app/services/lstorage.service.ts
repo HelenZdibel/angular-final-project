@@ -42,4 +42,9 @@ export class LstorageService {
       this.saveCart(cart);
     }
   }
+
+  isInCart(id: number): boolean {
+    const cart = this.getCart();
+    return cart.some((cartItem) => cartItem.id === id);
+  }
 }

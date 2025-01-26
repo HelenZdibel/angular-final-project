@@ -6,6 +6,12 @@
     </h2>
     <p>{{ product.description }}</p>
     <p>${{ product.price }}</p>
-    <button (click)="addToCart(product)">Add to cart</button>
+    
+    <button *ngIf="isInCart(product.id)" (click)="removeFromCart(product.id)">
+      Remove from cart
+    </button>
+    <button *ngIf="!isInCart(product.id)" (click)="addToCart(product)">
+      Add to cart
+    </button>
   </div>
 </div>
