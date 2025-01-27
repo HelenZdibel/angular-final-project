@@ -1,1 +1,139 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #333;
+  --secondary-color: #007bff;
+  --hover-color: #555;
+  --hover-secondary-color: #0056b3;
+  --text-color: #fff;
+  --border-color: #ccc;
+  --padding-small: 8px;
+  --padding-medium: 16px;
+  --padding-large: 20px;
+  --font-size-small: 14px;
+  --font-size-medium: 16px;
+  --font-size-large: 1.2rem;
+  --font-size-xlarge: 2em;
+  --margin-small: 2px;
+  --margin-medium: 10px;
+  --margin-large: 20px;
+  --border-radius: 4px;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: var(--padding-small) var(--padding-medium);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--hover-color);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--padding-medium);
+}
+
+.product {
+  border: 1px solid var(--border-color);
+  padding: var(--padding-medium);
+  text-align: center;
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+}
+
+nav {
+  background-color: var(--primary-color);
+  padding: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: var(--font-size-large);
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ff6347;
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: var(--padding-large) 0;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--padding-medium);
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: var(--font-size-small);
+}
+
+.footer-content nav ul {
+  list-style: none;
+  padding: 0;
+  margin: var(--margin-medium) 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-content nav ul li {
+  margin: 0 15px;
+}
+
+.footer-content nav ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: var(--font-size-small);
+}
+
+.footer-content nav ul li a:hover {
+  text-decoration: underline;
+}
+
+div {
+  text-align: center;
+  margin-top: var(--margin-large);
+}
+
+h2 {
+  font-size: var(--font-size-xlarge);
+  margin-bottom: var(--margin-medium);
+}
+
+p {
+  font-size: var(--font-size-large);
+  margin-bottom: var(--margin-medium);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: var(--margin-large);
+}

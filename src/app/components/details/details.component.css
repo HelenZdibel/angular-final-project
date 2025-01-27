@@ -1,3 +1,4 @@
+/* filepath: /e:/code/AngularCommSchool/final/angular-final-project/src/app/components/details/details.component.css */
 a button {
   background-color: #007bff;
   color: white;
@@ -14,26 +15,4 @@ a button {
 
 a button:hover {
   background-color: #0056b3;
-}
-
-div {
-  text-align: center;
-  margin-top: 20px;
-}
-
-h2 {
-  font-size: 2em;
-  margin-bottom: 10px;
-}
-
-p {
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-top: 20px;
 }
