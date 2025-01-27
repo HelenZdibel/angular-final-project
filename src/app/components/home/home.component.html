@@ -18,7 +18,8 @@
     </h2>
     <p>{{ product.description }}</p>
     <p>${{ product.price }}</p>
-
+    <!-- ngStyle -->
+    <!-- https://www.youtube.com/watch?v=dOuCzkm8Z4o&ab_channel=TbilisiSchoolOfCommunication -->
     <button *ngIf="isInCart(product.id)" (click)="removeFromCart(product.id)">
       Remove from cart
     </button>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-export interface Product {
+export interface Product_Interface {
   id: number;
   name: string;
   price: number;
@@ -12,7 +12,7 @@ export interface Product {
   providedIn: 'root',
 })
 export class ProductService {
-  private products: Product[] = [
+  private products: Product_Interface[] = [
     {
       id: 1,
       name: 'Product 1',
@@ -90,7 +90,7 @@ export class ProductService {
   }
 
   getProductById(id: number) {
-    return this.products.find((product) => product.id === id);
+    return this.products.find((product) => product.id === id) || null;
   }
 
   productInCart(id: number) {

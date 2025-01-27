@@ -1,1 +1,7 @@
-<p>Details of product id: {{ id }}</p>
+<div *ngIf="item">
+  <h2>{{ item.name }}</h2>
+  <p>{{ item.description }}</p>
+  <p>{{ item.price | currency }}</p>
+  <img [src]="item.image" alt="{{ item.name }}" />
+</div>
+<!-- https://www.youtube.com/watch?v=NtRUfQFYXiM&ab_channel=TbilisiSchoolOfCommunication -->
