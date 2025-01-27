@@ -29,9 +29,8 @@ export class CartComponent implements OnInit {
   }
   updateStats(): void {
     this.cartLength = this.cart.length;
-    this.cartTotal = this.cart.reduce(
-      (total, product) => total + product.price,
-      0
+    this.cartTotal = parseFloat(
+      this.cart.reduce((total, product) => total + product.price, 0).toFixed(2)
     );
   }
 
