@@ -154,3 +154,9 @@ img {
   border-radius: 8px;
   margin-top: var(--margin-large);
 }
+
+@media screen and (max-width: 800px) {
+  .contact div:first-child {
+    display: none;
+  }
+}

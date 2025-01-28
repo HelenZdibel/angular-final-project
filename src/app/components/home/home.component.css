@@ -1,0 +1,13 @@
+.item.incart {
+  position: relative;
+}
+.item.incart::after {
+  position: absolute;
+  content: "In Cart";
+  top: 10px;
+  right: -10px;
+  background-color: green;
+  color: white;
+  padding: 10px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
